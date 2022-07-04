@@ -1,0 +1,18 @@
+Faça um programa que multiplique por 4, todos os
+valores bytes entre as posições 200 e 300 do segmento de
+dados atual
+obs1: suponha que todos os valores são menores que 64 (decimal),
+assim, após a multiplicação, ainda caberão em um byte
+obs2: use deslocamentos para fazer a multiplicação
+obs3: quando é o segmento de dados atual, não precisa carregar ds e
+es
+
+///////////////////////////////////////////////////////////////////////////
+
+mov bx,200
+mov cx,101
+shl byte ptr[bx],1
+shl byte ptr[bx],1
+inc bx
+loop 0106
+int 20

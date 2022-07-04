@@ -1,0 +1,31 @@
+Faça uma rotina que coloca o caractere cujo código está
+em cl, e o atributo está em ch, na linha dl, coluna dh.
+
+é preciso calcular o endereço de memória a partir da linha
+e da coluna, fazendo: endereço=(linha*80+coluna)*2
+ou seja, (DL*80+DH)*2
+Colocar o código ascii do caractere neste local e, colocar o
+atributo no endereço seguinte
+
+////////////////////////////////////////////////////////////////////////
+
+mov cl,4f
+mov ch,07
+mov dx,0000
+call 200
+inc dx
+call 200
+int 20
+mov ax,b800
+mov ds,ax
+mov al,50
+mov dl,ah
+add al,dh
+adc ah,0
+mov bx,2
+mul bx
+mov bx,ax
+mov [bx],cl
+inc bx
+mov [bx],ch
+ret

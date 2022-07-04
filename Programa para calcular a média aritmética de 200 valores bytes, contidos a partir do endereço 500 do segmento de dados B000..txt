@@ -1,0 +1,22 @@
+Faça um programa para calcular a média aritmética de
+200 valores bytes, contidos a partir do endereço 500 do
+segmento de dados B000.
+obs1: a soma deve ser uma word, para caber o resultado
+obs2: para ir somando bytes à uma word, some o byte ao byte menos
+significativo da word e some o vai-um ao byte mais significativo
+
+///////////////////////////////////////////////////////////////////////////
+
+mov ax,b000
+mov ds,ax
+mov cx,200
+mov si,500
+mov ax,0
+add al,[si]
+adc ah,0
+inc si
+loop 0106
+mov cx,200
+mov dx,0
+div cx
+mov ax,cx

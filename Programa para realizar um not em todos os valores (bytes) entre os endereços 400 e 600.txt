@@ -1,0 +1,20 @@
+Faça um programa para realizar um not em todos os
+valores (bytes) entre os endereços 400 e 600 do segmento
+de memória atual, usando instruções de strings (lods e
+stos)
+
+observação:
+para processar de 400 até 600, coloque 201 no CX
+para processar de 401 à 600, coloque 200 em CX
+
+////////////////////////////////////////////////////////////////
+
+mov di,800
+mov cx,ff
+mov bx,401
+mov si,bx
+loadsb
+not al
+stosb
+loop 010b
+int 20

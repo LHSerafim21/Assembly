@@ -1,0 +1,13 @@
+Faça um programa para multiplicar dois valores bytes
+usando somas sucessivas
+
+///////////////////////////////////////////////////////////
+
+mov ax,5
+mov bx,5
+mov cx,bx
+dec bx
+add ax,cx
+dec bx
+jnz 0105
+int 20

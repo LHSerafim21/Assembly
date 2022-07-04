@@ -1,0 +1,17 @@
+Faça um programa para desenhar uma linha horizontal com a cor 2, do ponto (0,60) até (60,60)
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+mov bl,60
+mov ax,0004
+int 10
+mov ah,c
+mov dx,60
+mov cx,0
+mov al,2
+mov bh,0
+int 10
+inc cx
+cmp blicl
+jnp 0109
+int 20

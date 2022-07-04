@@ -1,0 +1,22 @@
+Faça um programa que coloca na tela as letras de A até
+Z, com o fundo = piscante verde e frente =
+amarelo
+
+//////////////////////////////////////////////////////////////////
+
+mov bx,0000
+mov ax,b800
+mov ds,ax
+mov dh,22
+mov cx,001a
+mov dl,41
+mov dl,[bx]
+inc dl
+inc bx
+mov byte ptr [bx],ae 
+inc bx
+dec cx
+jnz 010f
+dec dh
+jnz 010a
+int 20 

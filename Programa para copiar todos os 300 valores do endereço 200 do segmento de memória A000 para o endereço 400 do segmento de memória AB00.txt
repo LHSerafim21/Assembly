@@ -1,0 +1,20 @@
+Faça um programa para copiar todos os 300 valores
+(bytes) do endereço 200 do segmento de memória
+A000 para o endereço 400 do segmento de memória
+AB00
+
+/////////////////////////////////////////////////////////////
+
+mov ax,a000
+mov ds,ax
+mov ax,AB00
+mov es,ax
+mov di,400
+mov si,200
+mov cx,c4
+mov al,[si]
+mov es:[di],al
+inc di
+inc si
+loop 0113
+int 20

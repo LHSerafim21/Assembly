@@ -1,0 +1,22 @@
+Faça um programa para encontrar a posição da primeira
+ocorrência do valor A4 na string com 20 valores (byte) a partir
+do endereço 200 do segmento de dados atual. Se encontrar o
+valor, guarde a posição (word) em BX e faça AL=1, caso
+contrário, faça AL=0. faça sem usar instrução de string
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+cld
+mov di, 1ff
+mov cx, 14
+mov al, a4
+inc di
+sub al,es:[di]
+loopne 0107
+jnz 0118
+dec di
+mov al,1
+mov bx,di 
+int 20 
+mov al,0
+int 20
